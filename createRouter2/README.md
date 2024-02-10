@@ -1,4 +1,4 @@
-![image](https://github.com/SharmaNatvar/NodeJS_Work/assets/121554685/3f15ed93-bf1b-431f-afbf-417d8de59533)# Project Title
+# Project Title
 
 backend node learning
 
