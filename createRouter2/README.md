@@ -6,7 +6,7 @@ in this i use ejs in this we write html css and js
 
 
 
-const express = require('express')
+`const express = require('express')
 const ejs = require('ejs')
 const app = express()
 
@@ -46,4 +46,34 @@ app.use(function errorHandler(err ,req ,res , next) {
 })
 
 
-app.listen(8000)
+app.listen(8000)`
+
+
+
+### Screenshots1
+## Home router
+
+![App Screenshot](https://github.com/SharmaNatvar/NodeJS_Work/tree/master/createRouter2/public/image/img0.png)
+
+
+
+
+### Screenshots1
+## Error router
+
+![App Screenshot](https://github.com/SharmaNatvar/NodeJS_Work/tree/master/createRouter2/public/image/img1.png)
+
+
+
+
+### Screenshots1
+## Profile router
+
+![App Screenshot](https://github.com/SharmaNatvar/NodeJS_Work/tree/master/createRouter2/public/image/img2.png)
+
+
+### Screenshots1
+## user router
+#### url user name and page use name are same
+
+![App Screenshot](https://github.com/SharmaNatvar/NodeJS_Work/tree/master/createRouter2/public/image/img3.png)
