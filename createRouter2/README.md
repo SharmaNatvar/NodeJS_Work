@@ -53,7 +53,7 @@ app.listen(8000)`
 ### Screenshots1
 ## Home router
 
-![App Screenshot](https://github.com/SharmaNatvar/NodeJS_Work/tree/master/createRouter2/public/image/img0.png)
+![App Screenshot](https://github.com/SharmaNatvar/NodeJS_Work/blob/master/createRouter2/public/image/img0.png)
 
 
 
