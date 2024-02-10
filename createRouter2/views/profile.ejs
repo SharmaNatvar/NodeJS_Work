@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.4/swiper-bundle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+
+        /* // https://www.nagoyatv.com/saiyo/ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  min-width: 350px;
+  min-height: 100vh;
+  margin: 0 auto;
+  overflow-x: hidden;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  color: #fff;
+  background-color: #eae6e0;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.people__slide {
+  .swiper-slide {
+    width: 297px;
+    padding: 30px 0;
+    transform: scale(0.75);
+    transition: 0.3s;
+    .people__card {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      width: 276px;
+      padding: 25px 30px 30px;
+      border-radius: 48px;
+      background: linear-gradient(
+        135deg,
+        hsl(25 98% 70%),
+        hsl(23.9645 96.8689% 69.7096%),
+        hsl(21.0027 93.4957% 68.9107%),
+        hsl(16.5084 88.0997% 67.7756%),
+        hsl(11.099 81.428% 66.5035%),
+        hsl(5.69633 74.8663% 65.3092%),
+        hsl(1.56759 70.0643% 64.439%),
+        hsl(0.00000265346 68.306% 64.1176%)
+      );
+      transition: 0.3s;
+      .people__image {
+        position: relative;
+        padding: 4px;
+        width: 150px;
+        height: 150px;
+        margin-bottom: 15px;
+        overflow: hidden;
+        border-radius: 100%;
+        border: 5px solid rgba(#fff, 0.5);
+        img {
+          position: absolute;
+          z-index: 1;
+          top: 50%;
+          left: 50%;
+          width: 100%;
+          transform: translate(-50%, -50%);
+        }
+      }
+      .people__info {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+      }
+      .people__social {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+        padding-left: 0;
+        li {
+          padding: 0 5px;
+          a {
+            padding: 5px;
+            color: #fff;
+          }
+        }
+      }
+      .people__name {
+        margin-bottom: 10px;
+      }
+      .people__position {
+        margin-bottom: 15px;
+        font-size: 14px;
+        color: #fff;
+      }
+      .people__desc {
+        margin-bottom: 20px;
+        font-size: 13px;
+        line-height: 1.4;
+        color: #fff;
+        text-align: center;
+      }
+      .people__btn {
+        display: inline-flex;
+        a {
+          color: #fff;
+          border-radius: 10px;
+          padding: 10px 20px;
+          border: solid 1px #fff;
+          transition: 0.25s;
+          &:hover {
+            background-color: #fff;
+            color: #e26565;
+          }
+        }
+      }
+    }
+    &.swiper-slide-active {
+      animation-name: elastic1;
+      animation-duration: 0.6s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in-out;
+    }
+    &.swiper-slide-active {
+      animation-name: elastic1_sp;
+    }
+    &:nth-child(even) .people__card {
+      transform: rotate(-5deg);
+    }
+    &:nth-child(odd) .people__card {
+      transform: rotate(5deg);
+    }
+  }
+}
+
+@keyframes elastic1 {
+  0% {
+    transform: scale(1);
+  }
+
+  40% {
+    transform: scale(1.4);
+  }
+
+  55% {
+    transform: scale(1.27);
+  }
+
+  70% {
+    transform: scale(1.36);
+  }
+
+  85% {
+    transform: scale(1.31);
+  }
+
+  100% {
+    transform: scale(1.33);
+  }
+}
+
+@keyframes elastic1_sp {
+  0% {
+    transform: scale(0.75);
+  }
+
+  40% {
+    transform: scale(1.05);
+  }
+
+  55% {
+    transform: scale(0.95);
+  }
+
+  70% {
+    transform: scale(1.02);
+  }
+
+  85% {
+    transform: scale(0.98);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <div class="swiper people__slide">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="people__card">
+                <div class="people__image">
+                  <img src="https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="大西 真裕">
+                </div>
+                <div class="people__info">
+                  <ul class="people__social">
+                    <li><a href=""><i class="fa-brands fa-facebook-f"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-linkedin-in"></i></a></li>
+                  </ul>
+                  <h3 class="people__name">Drew Houston</h3>
+                  <p class="people__position">Co-founder and CEO</p>
+                  <p class="people__desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                </div>
+                <div class="people__btn">
+                  <a href="">View info</a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="people__card">
+                <div class="people__image">
+                  <img src="https://images.pexels.com/photos/1181424/pexels-photo-1181424.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+                </div>
+                <div class="people__info">
+                  <ul class="people__social">
+                    <li><a href=""><i class="fa-brands fa-facebook-f"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-linkedin-in"></i></a></li>
+                  </ul>
+                  <h3 class="people__name">Melanis Collins</h3>
+                  <p class="people__position">VP off People</p>
+                  <p class="people__desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                </div>
+                <div class="people__btn">
+                  <a href="">View info</a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="people__card">
+                <div class="people__image">
+                  <img src="https://images.pexels.com/photos/3778876/pexels-photo-3778876.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="篠田 直哉">
+                </div>
+                <div class="people__info">
+                  <ul class="people__social">
+                    <li><a href=""><i class="fa-brands fa-facebook-f"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-linkedin-in"></i></a></li>
+                  </ul>
+                  <h3 class="people__name">Bharat Mediratta</h3>
+                  <p class="people__position">CTO and SVP, Platform</p>
+                  <p class="people__desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                </div>
+                <div class="people__btn">
+                  <a href="">View info</a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="people__card">
+                <div class="people__image">
+                  <img src="https://images.pexels.com/photos/1587009/pexels-photo-1587009.jpeg" alt="">
+                </div>
+                <div class="people__info">
+                  <ul class="people__social">
+                    <li><a href=""><i class="fa-brands fa-facebook-f"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-linkedin-in"></i></a></li>
+                  </ul>
+                  <h3 class="people__name">Olivia Nottebohm</h3>
+                  <p class="people__position">Chief Operating Officer</p>
+                  <p class="people__desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                </div>
+                <div class="people__btn">
+                  <a href="">View info</a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="people__card">
+                <div class="people__image">
+                  <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+                </div>
+                <div class="people__info">
+                  <ul class="people__social">
+                    <li><a href=""><i class="fa-brands fa-facebook-f"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-linkedin-in"></i></a></li>
+                  </ul>
+                  <h3 class="people__name">Bart Volkmer</h3>
+                  <p class="people__position">Chief Legal Officer</p>
+                  <p class="people__desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                </div>
+                <div class="people__btn">
+                  <a href="">View info</a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="people__card">
+                <div class="people__image">
+                  <img src="https://images.pexels.com/photos/3646160/pexels-photo-3646160.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+                </div>
+                <div class="people__info">
+                  <ul class="people__social">
+                    <li><a href=""><i class="fa-brands fa-facebook-f"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-linkedin-in"></i></a></li>
+                  </ul>
+                  <h3 class="people__name">Lisa Campell</h3>
+                  <p class="people__position">Graphic Designer</p>
+                  <p class="people__desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                </div>
+                <div class="people__btn">
+                  <a href="">View info</a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="people__card">
+                <div class="people__image">
+                  <img src="https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+                </div>
+                <div class="people__info">
+                  <ul class="people__social">
+                    <li><a href=""><i class="fa-brands fa-facebook-f"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-linkedin-in"></i></a></li>
+                  </ul>
+                  <h3 class="people__name">Bryan Schreier</h3>
+                  <p class="people__position">Developer</p>
+                  <p class="people__desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                </div>
+                <div class="people__btn">
+                  <a href="">View info</a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="people__card">
+                <div class="people__image">
+                  <img src="https://images.pexels.com/photos/10669639/pexels-photo-10669639.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+                </div>
+                <div class="people__info">
+                  <ul class="people__social">
+                    <li><a href=""><i class="fa-brands fa-facebook-f"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-linkedin-in"></i></a></li>
+                  </ul>
+                  <h3 class="people__name">Karen Peacock</h3>
+                  <p class="people__position">Business Assistant</p>
+                  <p class="people__desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                </div>
+                <div class="people__btn">
+                  <a href="">View info</a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="people__card">
+                <div class="people__image">
+                  <img src="https://images.pexels.com/photos/1486064/pexels-photo-1486064.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+                </div>
+                <div class="people__info">
+                  <ul class="people__social">
+                    <li><a href=""><i class="fa-brands fa-facebook-f"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-linkedin-in"></i></a></li>
+                  </ul>
+                  <h3 class="people__name">Paul Jacobs</h3>
+                  <p class="people__position">Photographer</p>
+                  <p class="people__desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                </div>
+                <div class="people__btn">
+                  <a href="">View info</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.4/swiper-bundle.min.js"></script>
+<script>
+    const swiper = new Swiper('.swiper', {
+  loop: true, 
+  slidesPerView: "auto",
+  centeredSlides: true,
+  observeParents: !0,
+  observer: !0
+});
+
+</script>
+</html>
