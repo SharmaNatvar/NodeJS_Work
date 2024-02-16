@@ -1,10 +1,11 @@
+const { studentSchema } = require("../model")
 const student = require("../model/student.model")
 
 
-const getDatastudent = ()=>{
-    const data = 'data sercive'
+const getDatastudent = (body)=>{
+    // const data = 'data sercive'
     // return student.find()
-    return data
+    return studentSchema.create(body)
 }
 
 

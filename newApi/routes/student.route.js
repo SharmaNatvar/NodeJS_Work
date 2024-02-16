@@ -4,7 +4,7 @@ const {studentController} = require('../controller')
 
 
 
-route.get('/getData', studentController.getStudent)
+route.post('/getData', studentController.getStudent)
 
 
 module.exports = route

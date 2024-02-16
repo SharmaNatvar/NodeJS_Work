@@ -1,18 +1,14 @@
 const mongoose = require('mongoose')
 
-const MONGOURL = 'mongodb://localhost:27017/newapi'
-
-mongoose.connect(MONGOURL,{
-    useNewUrlParser : true,
-    useUnifiedTopology : true
-})
-
-
-const db = mongoose.connection;
-
-db.on('connected',()=>{
-    console.log('mongo server connected ');
-})
+const MONGOURL = 'mongodb://127.0.0.1:27017/newapi'
+const dbConnect = () =>{
+    mongoose.connect(MONGOURL).then(()=>{
+        console.log('dbconnect');
+    })
+    .catch((err)=>{
+        console.log(err);
+    })
+}
 
 
-module.exports = db;
+module.exports = dbConnect
