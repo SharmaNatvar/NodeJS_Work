@@ -1,0 +1,1 @@
+module.exports.teacherSchema = require('./teacher.model')
