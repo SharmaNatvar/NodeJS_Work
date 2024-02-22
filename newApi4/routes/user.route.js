@@ -8,4 +8,6 @@ route.post('/post', userController.postUserData)
 
 route.delete('/delete/:id', userController.deleteUserData)
 
+route.put('/update/:id',userController.updateUserData)
+
 module.exports = route

@@ -12,10 +12,8 @@ const postDataService = (body) =>{
 }
 
 
-const checkDeleteID = (id) =>{
+const checkID = (id) =>{
     console.log( id , 'id check');
-    // const _id = id
-    // console.log( _id , '_id check');
     return user.findById(id)
 }
 
@@ -24,4 +22,10 @@ const deleteUserData =(id)=>{
 return user.findByIdAndDelete(id)
 }
 
-module.exports = {getDataService , postDataService , checkDeleteID , deleteUserData}
+
+const updateUserData = (id , body)=>{
+    console.log(body,'body')
+    return user.findByIdAndUpdate(id , body , {new:true})
+}
+
+module.exports = {getDataService , postDataService , checkID , deleteUserData , updateUserData}
