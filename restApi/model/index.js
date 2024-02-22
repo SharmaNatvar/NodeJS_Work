@@ -1,0 +1,1 @@
+module.exports.studentModel = require('./student.model')
