@@ -1,0 +1,17 @@
+h1{
+    color: red;
+    text-align: center;
+}
+
+
+.formBg{
+    width: 300px;
+    border: 1px solid black;
+    margin: 10px;
+    padding: 20px;
+}
+
+.card-bg{
+    display: flex;
+    flex-wrap: wrap;
+}
