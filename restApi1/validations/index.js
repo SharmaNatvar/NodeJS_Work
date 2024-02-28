@@ -1,0 +1,1 @@
+module.exports.playerValidation = require('./player.validation')

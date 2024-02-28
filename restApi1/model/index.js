@@ -1,0 +1,1 @@
+module.exports.playerModel = require('./player.model')
