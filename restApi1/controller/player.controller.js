@@ -69,6 +69,15 @@ const updatePlayer = async (req, res) => {
     if (!body) {
       throw new Error("body not found");
     }
+    if (!email) {
+      throw new Error("email not found");
+    }
+    const resEmail = await playerService.checkEmail(email);
+
+    if (resEmail) {
+      throw new Error("email must be unique");
+    }
+
     if (!id) {
       throw new Error("id not get");
     }
