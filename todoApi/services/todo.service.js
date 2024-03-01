@@ -9,6 +9,10 @@ const todoRead = () =>{
     return todoModel.find().populate('userId')
 }
 
+const getUsertodo = (id) =>{
+    return todoModel.find({userId:{_id:id}}).populate('userId')
+}
+
 const todoCreate = (body )=>{
     return todoModel.create(body)
 }
@@ -25,4 +29,4 @@ const todoDelete = (id) =>{
 
 
 
-module.exports = {checkId,todoCreate,todoDelete,todoUpdate,todoRead}
+module.exports = {checkId,todoCreate,todoDelete,todoUpdate,todoRead ,getUsertodo}

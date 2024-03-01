@@ -20,6 +20,35 @@ const readtodo = async (req, res) => {
   }
 };
 
+// get user todo
+
+const getUsertodo = async (req , res) =>{
+    try {
+        const {id} = req.params
+        
+        if(!id){
+            throw new Error('id not get')
+        }
+
+        const resBody = await todoService.getUsertodo(id)
+console.log(resBody,'resBody');
+        if(!resBody){
+            throw new Error(' data not found')
+        }
+
+        res.status(200).json({
+            message:'data get scusses',
+            data : resBody
+        })
+    } catch (error) {
+        res.status(400).json({
+            message:'Error found',
+            error:error.message
+        })
+    }
+}
+
+
 // todo create
 
 const createTodo = async (req, res) => {
@@ -117,4 +146,4 @@ const deleteTodo = async (req, res) => {
 };
 
 
-module.exports = {readtodo , createTodo , deleteTodo , updateTodo}
+module.exports = {readtodo , createTodo , deleteTodo , updateTodo ,getUsertodo}
