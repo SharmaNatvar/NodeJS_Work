@@ -1,79 +1,78 @@
-base url =>'localhost:8000/v1'
+# API Documentation
 
-<!-- middle -->
-todo => '/todo'
+Base URL: `localhost:8000/v1`
 
+## To-do Endpoints
 
-<!-- EndPoint -->
-get todo  => '/read'                      //get all todo list
-get todo by user => '/getUser/:userId'     // get list create by user 
-post todo => '/create'                    // create todo list
-put todo => '/update/:todoId'             //update todo
-delete todo => '/delete/:todoId'           // delete todo
+### GET All To-do Items
+- **URL:** `/todo/read`
+- **Description:** Retrieves all to-do items.
+- **Request Type:** GET
 
+### GET To-do Items by User
+- **URL:** `/todo/getUser/:userId`
+- **Description:** Retrieves to-do items created by a specific user.
+- **Request Type:** GET
 
-todo body sand=> {
-    "title":"node",
-    "description":"node work",
-    "workStatus":false,
-    "userId":"65e1df41e42fc8ed4e2fbfbf"
-}
-
-
-todo body get =>{
-    "message": "data get scusses",
-    "data": [
-        {
-            "_id": "65e1e30ee11fe43b0cb8655b",
-            "title": "work",
-            "description": "project work",
-            "workStatus": false,
-            "userId": {
-                "_id": "65e1df41e42fc8ed4e2fbfbf",
-                "userName": "krishna sharma",
-                "email": "abc@gmail.com",
-                "password": "abc123",
-                "__v": 0
-            },
-            "__v": 0
-        }
-    ]
-}
+### Create To-do Item
+- **URL:** `/todo/create`
+- **Description:** Creates a new to-do item.
+- **Request Type:** POST
+- **Body Format:**
+  ```json
+  {
+      "title": "node",
+      "description": "node work",
+      "workStatus": false,
+      "userId": "65e1df41e42fc8ed4e2fbfbf"
+  }
 
 
+### Update To-do Item
+
+- URL: `/todo/update/:todoId`
+- Description: Updates an existing to-do item.
+- Request Type: `PUT`
+
+### Delete To-do Item
+
+- URL: `/todo/delete/:todoId`
+- Description: Deletes a to-do item.
+- Request Type: `DELETE`
 
 
 
+## User Endpoints
 
-<!-- middle -->
-user => '/user'
+### GET All Users
+
+- URL: `/user/read`
+- Description: Retrieves all users.
+- Request Type: `GET`
+
+### Create User
+
+- URL: `/user/create`
+- Description: Creates a new user.
+- Request Type: `POST`
+- Body Format:
+  ```json
+  {
+      "userName": "abhi",
+      "email": "abhi@gmail.com",
+      "password": "abhisa123"
+  }
 
 
-<!-- EndPoint -->
-get user  => '/read'                      //get all user list
-post user => '/create'                    // create user list
-put user => '/update/:userId'             //update user
-delete user => '/delete/:userId'           // delete user
 
+### Update User
 
+- URL: `/user/update/:userId`
+- Description: Updates an existing user.
+- Request Type: `PUT`
 
+### Delete User
 
-user body sand=> {
-    "userName": "abhi",
-"email":"abhi@gmail.com",
-"password":"abhisa123"
-}
-
-
-user body get =>{
-    "message": "get data",
-    "data": [
-        {
-            "_id": "65e1df41e42fc8ed4e2fbfbf",
-            "userName": "krishna sharma",
-            "email": "abc@gmail.com",
-            "password": "abc123",
-            "__v": 0
-        },
-    ]
-}
+- URL: `/user/delete/:userId`
+- Description: Deletes a user.
+- Request Type: `DELETE`
