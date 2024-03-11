@@ -3,7 +3,6 @@ const { listService } = require("../services");
 const listPost = async (req, res) => {
   try {
     const body = req.body;
-    console.log(body);
     if (!body) {
       throw new Error("data not get");
     }
@@ -101,6 +100,7 @@ const listDelete = async (req, res) => {
     }
 
     const resID = await listService.checkId(id);
+
     if (!resID) {
       throw new Error("list not found");
     }
@@ -110,15 +110,6 @@ const listDelete = async (req, res) => {
       throw new Error("list not Delete");
     }
 
-    const { userID } = resBody;
-    console.log(userID, "userID");
-
-    const resUser = await listService.UserUpdate(userID, id);
-    console.log(resUser, "resUser");
-
-    if (!resUser) {
-      throw new Error("user not found");
-    }
 
     res.status(201).json({
       message: "Delete scussesfully",

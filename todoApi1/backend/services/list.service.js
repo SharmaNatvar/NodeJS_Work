@@ -21,12 +21,9 @@ const deleteList = (id) =>{
     return listModel.findByIdAndDelete(id)
 }
 
-const UserUpdate = (userID , id)=>{
-    return userModel.findByIdAndUpdate( {_id : userID} , {$pull : {listId:id}})
-}
 
 const updateList = (id , body) =>{
     return listModel.findByIdAndUpdate(id , body,{new:true})
 }
 
-module.exports = {createList , findUser, getList , deleteList , UserUpdate , checkId, updateList}
+module.exports = {createList , findUser, getList , deleteList  , checkId, updateList}
