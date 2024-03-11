@@ -10,7 +10,8 @@ route.get('/' , (req , res)=>{
 
 
 route.get('/blog' , (req , res)=>{
-    res.render(path.join(__dirname, '../views/blogHome'))
+    res.render(path.join(__dirname, '../views/blogHome') ,{'blogData':blogs.data})
+    // res.send('blogHome')
 })
 
 route.get('/blog/:slug' , (req , res)=>{
@@ -18,7 +19,7 @@ route.get('/blog/:slug' , (req , res)=>{
     const myBlog = blogs.data.filter(e => {
         return e.slug === slug
     });
-    res.render(path.join(__dirname, '../views/blogPage'))
+    res.render(path.join(__dirname, '../views/blogPage') ,{'blogData':myBlog})
 })
 
 
