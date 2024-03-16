@@ -1,37 +1,37 @@
 # clonePost/
 
-├── index.js             
+├── index.js/             
 ├── config/
-│   ├── environment.js   
+│   ├── environment.js/  
 │   └── ...               
 ├── controllers/
-│   ├── index.js        
-│   ├── userController.js   
+│   ├── index.js/        
+│   ├── userController.js/   
 │   └── ...              
 ├── db/
-│   ├── connection.js   
+│   ├── connection.js/   
 │   └── ... 
 ├─  models/
-│   ├── index.js            
-│   ├── User.js      
+│   ├── index.js/            
+│   ├── User.js/      
 │   └── ...            
 ├── middleware/
-│   ├── auth.js            
+│   ├── auth.js/            
 │   └── ...              
 ├── public/
 │   ├── css/             
 │   ├── images/           
 │   └── js/              
 ├── routes/
-│   ├── index.js              
-│   ├── user.js          
+│   ├── index.js/              
+│   ├── user.js/          
 │   └── ...            
 ├── services/
-│   ├── index.js              
-│   ├── userService.js                 
+│   ├── index.js/              
+│   ├── userService.js/                 
 │   └── ...                         
 └── views/
-    ├── index.ejs           
+    ├── index.ejs/           
     └── ...              
 
 README.md               
