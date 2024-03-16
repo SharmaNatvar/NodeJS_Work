@@ -1,37 +1,41 @@
 # clonePost/
-├── index.js/ (Main entry point)/
+
+├── index.js             
 ├── config/
-│ ├── environment.js/ (Environment configuration)/
-│ └── ... (Other configuration files)/
+│   ├── environment.js   
+│   └── ...               
 ├── controllers/
-│ ├── index.js/ (Main controller file importing all controllers)/
-│ ├── userController.js/ (User controller handling user-related logic)/
-│ └── ... (Other controller files)/
+│   ├── index.js        
+│   ├── userController.js   
+│   └── ...              
 ├── db/
-│ ├── connection.js/ (Database connection setup)/
-│ └── ... (Other database-related files)/
-├── models/
-│ ├── index.js/ (Main model file importing all models)/
-│ ├── User.js/ (User model definition)/
-│ └── ... (Other model files)/
+│   ├── connection.js   
+│   └── ... 
+├─  models/
+│   ├── index.js            
+│   ├── User.js      
+│   └── ...            
 ├── middleware/
-│ ├── auth.js/ (Authentication middleware)/
-│ └── ... (Other middleware files)/
+│   ├── auth.js            
+│   └── ...              
 ├── public/
-│ ├── css/ (CSS files)/
-│ ├── images/ (Image files)/
-│ └── js/ (JavaScript files)/
+│   ├── css/             
+│   ├── images/           
+│   └── js/              
 ├── routes/
-│ ├── index.js/ (Main router file importing all routers)/
-│ ├── user.js/ (User router handling user routes)/
-│ └── ... (Other router files)/
+│   ├── index.js              
+│   ├── user.js          
+│   └── ...            
 ├── services/
-│ ├── index.js/ (Main service file importing all services)/
-│ ├── userService.js/ (User service handling user-related logic)/
-│ └── ... (Other service files)/
+│   ├── index.js              
+│   ├── userService.js                 
+│   └── ...                         
 └── views/
-├── index.ejs/ (Main view file)/
-└── ... (Other view files)/   
+    ├── index.ejs           
+    └── ...              
+
+README.md               
+package.json   
 
 README.md /              
 package.json  
