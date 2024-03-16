@@ -1,37 +1,37 @@
-project-name/
-├── index.js     ()          
+# clonePost/
+├── index.js (Main entry point)
 ├── config/
-│   ├── environment.js   
-│   └── ...               
+│ ├── environment.js (Environment configuration)
+│ └── ... (Other configuration files)
 ├── controllers/
-│   ├── index.js    (all controller file call here example - user etc )
-│   ├── userController.js   (all user controller here , get post logic write here , controller file call services file)
-│   └── ...              
+│ ├── index.js (Main controller file importing all controllers)
+│ ├── userController.js (User controller handling user-related logic)
+│ └── ... (Other controller files)
 ├── db/
-│   ├── connection.js   (connect with database)  
-│   └── ... 
-├─  models/
-│   ├── index.js    (all models file call here example - user etc )            
-│   ├── User.js      (user model here)  
-│   └── ...            
+│ ├── connection.js (Database connection setup)
+│ └── ... (Other database-related files)
+├── models/
+│ ├── index.js (Main model file importing all models)
+│ ├── User.js (User model definition)
+│ └── ... (Other model files)
 ├── middleware/
-│   ├── auth.js            
-│   └── ...              
+│ ├── auth.js (Authentication middleware)
+│ └── ... (Other middleware files)
 ├── public/
-│   ├── css/             
-│   ├── images/           
-│   └── js/              
+│ ├── css/ (CSS files)
+│ ├── images/ (Image files)
+│ └── js/ (JavaScript files)
 ├── routes/
-│   ├── index.js              (all router file call here example - user etc )    
-│   ├── user.js              (user router here , router call controller file )  
-│   └── ...            
+│ ├── index.js (Main router file importing all routers)
+│ ├── user.js (User router handling user routes)
+│ └── ... (Other router files)
 ├── services/
-│   ├── index.js              (all services file call here example - user etc )    
-│   ├── userService.js                 (user service here , service file connet model and database and give respone to conteroller file)  
-│   └── ...                         
+│ ├── index.js (Main service file importing all services)
+│ ├── userService.js (User service handling user-related logic)
+│ └── ... (Other service files)
 └── views/
-    ├── index.ejs           
-    └── ...              
+├── index.ejs (Main view file)
+└── ... (Other view files)   
 
 README.md               
 package.json  
