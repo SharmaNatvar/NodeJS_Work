@@ -56,9 +56,9 @@ app.get('/feed',(req , res) =>{
     res.render ('feed')
   })
 app.get('/profile', isLoggedIn , async(req , res) =>{
-    const data = await req.user.populate('posts')
-    console.log(data);
-    res.render ('profile' , {user : data})
+    // const data = await req.user.populate('posts')
+    // console.log(data);
+    res.render ('profile' , {user : req.user})
   })
 
 // DB connect
