@@ -2,11 +2,19 @@ const { postService } = require("../services");
 
 const postCreate = async (req, res) => {
   try {
-    const body = req.body;
-
-    if (!body) {
+    if (!req.body || !req.file) {
       throw new Error("data not get");
     }
+    const { _id , username ,posts} = req.user;
+
+    if(!username){
+      throw new Error('user name not found')
+    }
+    const body = {
+      postText: req.body.postText,
+      image: req.file.filename,
+      userId: _id,
+    };
     const resBody = await postService.postCreate(body);
 
     if (!resBody) {
@@ -16,9 +24,9 @@ const postCreate = async (req, res) => {
 
     const resUser = await postService.findUserId(id);
     resUser.posts.push(resBody._id);
-    const userrrrrrr = await resUser.save();
+    const updateUser = await resUser.save();
 
-    if (!userrrrrrr) {
+    if (!updateUser) {
       throw new Error("res user id not found");
     }
 

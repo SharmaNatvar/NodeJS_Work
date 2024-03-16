@@ -1,39 +1,25 @@
 const { userService } = require("../services");
-
-
-const Home = (req , res) =>{
-  res.render ('index',{title:'Express'})
-}
-
-const profile = (req , res) =>{
-  res.render ('profile',{title:'profile'})
-}
-
+const passport = require("passport");
 
 const postUser = async (req, res) => {
   try {
+    const { username, email } = req.body;
     const body = req.body;
-    const email = body.email;
-    if (!body || !email) {
+    if (!username || !email) {
       throw new Error("data not get");
     }
 
-    const resEmail = await userService.checkEmail(email);
-
-    if (resEmail) {
-      throw new Error("email must be unique");
+    const resName = await userService.checkName(username);
+    if (resName) {
+      throw new Error("username must be unique");
     }
 
     const resBody = await userService.userPost(body);
-
     if (!resBody) {
       throw new Error("user not created");
     }
 
-    res.status(201).json({
-      message: "scusses created",
-      data: resBody,
-    });
+    res.redirect("/");
   } catch (error) {
     res.status(400).json({
       message: "error found",
@@ -42,24 +28,24 @@ const postUser = async (req, res) => {
   }
 };
 
-const getAllUser = async (req, res) => {
-  try {
-    const resBody = await userService.allUserGet();
 
-    if (!resBody) {
-      throw new Error("data not get");
-    }
-
-    res.status(200).json({
-      message: " data get",
-      data: resBody,
-    });
-  } catch (err) {
-    res.status(400).json({
-      message: "error found",
-      data: err.message,
-    });
-  }
+const loginUser = (req, res, next) => {
+  passport.authenticate("local", {
+    successRedirect: "/profile",
+    failureRedirect: "/",
+    failureFlash: true,
+  })(req, res, next);
 };
 
-module.exports = { postUser, getAllUser, Home, profile };
+const logOutUser = (req, res, next) => {
+  req.logout(function (err) {
+    if (err) {
+      return next(err);
+    }
+    res.redirect("/");
+  });
+};
+
+
+
+module.exports = { postUser, loginUser, logOutUser };

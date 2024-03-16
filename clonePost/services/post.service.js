@@ -8,10 +8,13 @@ const getAllPost = () =>{
     return postModel.find().populate('userId')
 }
 
+const findUser = (userName) =>{
+    return userModel.findOne({username : userName})
+}
+
 const findUserId = (id) =>{
-    console.log(id ,' id 1');
     return userModel.findOne({_id : id})
 }
 
 
-module.exports = {postCreate , getAllPost , findUserId}
+module.exports = {postCreate , getAllPost , findUserId , findUser}

@@ -1,8 +1,14 @@
 const { userModel } = require("../model")
+const passport = require("passport");
 
 
-const checkEmail = (email) =>{
-    return userModel.findOne({email : email})
+const localStrategy = require("passport-local")
+passport.use(new localStrategy(userModel.authenticate()))
+
+
+
+const checkName = (username) =>{
+    return userModel.findOne({username : username})
 }
 
 const checkId = (id) =>{
@@ -10,7 +16,8 @@ const checkId = (id) =>{
 }
 
 const userPost = (body) =>{
- return userModel.create(body)
+    const userData = { username: body.username, email : body.email, fullname : body.fullname };
+    return userModel.register(userData, body.password)
 }
 
 const allUserGet = () =>{
@@ -21,4 +28,4 @@ const allUserGet = () =>{
 
 
 
-module.exports = {checkId, checkEmail, userPost , allUserGet}
+module.exports = {checkId, checkName, userPost , allUserGet}

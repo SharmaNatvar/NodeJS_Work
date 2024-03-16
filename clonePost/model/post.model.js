@@ -4,7 +4,10 @@ const plm = require('passport-local-mongoose')
 const postSchema = new mongoose.Schema({
     postText :  {
         type: String,
-        required : true
+        // required : true
+    },
+    image:{
+        type : String
     },
     creadedAt : {
         type :Date,
@@ -16,7 +19,7 @@ const postSchema = new mongoose.Schema({
     },
     userId:{
         type:mongoose.Schema.ObjectId,
-        ref:'userSchema'
+        ref:'user'
     }
 })
 

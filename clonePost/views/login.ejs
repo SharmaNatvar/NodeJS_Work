@@ -1,39 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
-    <link rel="stylesheet" href="/css/login.css">
-</head>
-<body>
+    <link rel="stylesheet" href="/css/login.css" />
+  </head>
+  <body>
     <div class="container">
-        <div class="content">
-          <!--pinterest logo-->
-          <img src="https://th.bing.com/th/id/OIP.c7J7weefn0EwWYLEQASavwHaG7?rs=1&pid=ImgDetMain" alt="pin logo" class="img1" />
-          <p class="header">login in to see</p>
-    <form action="/v1/userRegister/register" method="post">
+      <div class="content">
+        <img
+          src="https://th.bing.com/th/id/OIP.c7J7weefn0EwWYLEQASavwHaG7?rs=1&pid=ImgDetMain"
+          alt="pin logo"
+          class="img1"
+        />
+        <p class="header">login in to see</p>
+        <% if(error.length > 0 ) {%>
+        <p style="color: red; margin-bottom: 10px;"><%= error %></p>
+        <%}%>
+        <form action="/v1/user/login" method="post">
+          <input
+            type="text"
+            placeholder="username"
+            name="username"
+            class="detail"
+          /><br />
+          <input
+            type="password"
+            placeholder="Password"
+            name="password"
+            class="detail"
+          />
+          <input class="btn int" type="submit" value=" login Account" />
+        </form>
+        <!-- <h4>Forgot your password?</h4> -->
 
-        <input type="email" placeholder="email" name="email" class="detail" /><br />
-        <input type="text" placeholder="UserName" name="username" class="detail" /><br />
-        <input type="text" placeholder="Full Name" name="fullname" class="detail" /><br />
-        <input type="password" placeholder="Password" name="password" class="detail" />
-        <input class="btn int" type="submit" value=" Register Account" />
-  
-    </form>
-          <!-- <h4>Forgot your password?</h4> -->
-    
-          <footer>
-            <p>
-              By continuing, you agree to Pinterest's
-              <b>Terms of Service, Privacy policy.</b>
-            </p>
-            <hr />
-            <p>Not on Pinterest yet? Sign up</p>
-          </footer>
-        </div>
+        <footer>
+          <p>
+            By continuing, you agree to clonePost's
+            <b>Terms of Service, Privacy policy.</b>
+          </p>
+          <hr />
+          <p><a href="/register">Not on clonePost yet? Sign up</a></p>
+        </footer>
       </div>
-      <div > <a href="/" class="upbtn">Sign up</a></div>
-    
-</body>
+    </div>
+  </body>
 </html>
