@@ -1,16 +1,20 @@
 const passport = require("passport");
 const { userModel } = require("../model");
-const localStrategy = require("passport-local");
-passport.authenticate(new localStrategy(userModel.authenticate()));
 
 const registerUser = async (req, res) => {
   try {
     const { username, email, fullname } = req.body;
     const userData = new userModel({ username, email, fullname });
-
-    userModel.register(userData, req.body.password).then(function () {
+    console.log(req.body.password , 'req.body.password');
+    userModel.register(userData, req.body.password, (err, user) => {
+      if (err) {
+        res.status(400).json({
+          message: "error Found",
+          data: err.message,
+        });
+      }
       passport.authenticate("local")(req, res, function () {
-        res.redirect("/profile");
+        res.redirect("/v1/user/profile");
       });
     });
   } catch (err) {
@@ -38,9 +42,5 @@ const logOutUser = (req, res, next) => {
 };
 
 
-function isLoggedIn(req, res, next){
-    if(req.authenticate()) return next()
-    res.redirect("/")
-}
 
-module.exports = { registerUser, loginUser , logOutUser};
+module.exports = { registerUser, loginUser, logOutUser};

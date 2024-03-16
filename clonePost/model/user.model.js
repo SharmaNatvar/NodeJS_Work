@@ -7,6 +7,11 @@ const userSchema = mongoose.Schema({
         required :true,
         unique : true
     },
+    fullname:{
+        type:String,
+        required :true,
+        unique : true
+    },
     email:{
         type:String,
         required:true,
@@ -14,7 +19,6 @@ const userSchema = mongoose.Schema({
     },
     password:{
         type:String,
-        required:true
     },
     posts:[{
         type: mongoose.Schema.Types.ObjectId,

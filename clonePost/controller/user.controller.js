@@ -1,5 +1,15 @@
 const { userService } = require("../services");
 
+
+const Home = (req , res) =>{
+  res.render ('index',{title:'Express'})
+}
+
+const profile = (req , res) =>{
+  res.render ('profile',{title:'profile'})
+}
+
+
 const postUser = async (req, res) => {
   try {
     const body = req.body;
@@ -52,4 +62,4 @@ const getAllUser = async (req, res) => {
   }
 };
 
-module.exports = { postUser, getAllUser };
+module.exports = { postUser, getAllUser, Home, profile };
