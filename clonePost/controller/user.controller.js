@@ -20,6 +20,7 @@ const postUser = async (req, res) => {
     }
 
     res.redirect("/");
+    
   } catch (error) {
     res.status(400).json({
       message: "error found",
@@ -27,6 +28,15 @@ const postUser = async (req, res) => {
     });
   }
 };
+
+
+const postImg = async(req,res,next) =>{
+  const resName = await userService.checkName(req.session.passport.user);
+  resName.dp = req.file.filename
+  await resName.save();
+  res.redirect("/profile");
+} 
+
 
 
 const loginUser = (req, res, next) => {
@@ -48,4 +58,4 @@ const logOutUser = (req, res, next) => {
 
 
 
-module.exports = { postUser, loginUser, logOutUser };
+module.exports = { postUser, loginUser, logOutUser ,postImg};

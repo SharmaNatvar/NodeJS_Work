@@ -8,7 +8,7 @@
 
 html {
   scroll-behavior: auto;
-  background-color: hsl(0, 0%, 10%);
+  background-color: hsl(0, 0%, 10%) !important;
   color: hsl(0, 0%, 90%);
   font: normal 400 1.1rem/1.2rem "Roboto";
 }
@@ -84,3 +84,21 @@ html {
 .year {
   font: italic 500 0.8rem/0.9rem "Roboto";
 }
+
+
+button {
+    width: 130px;
+    height: 40px;
+    border-radius: 10px;
+    font-weight: bolder;
+    border: none;
+  }
+  
+  .button .connect {
+    background-color: #ff0000;
+    color: #ededed;
+  }
+  button.connect:hover {
+    letter-spacing: 1px;
+    transition: 0.5s;
+  }

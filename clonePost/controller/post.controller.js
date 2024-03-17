@@ -30,14 +30,11 @@ const postCreate = async (req, res) => {
       throw new Error("res user id not found");
     }
 
-    res.status(201).json({
-      message: "scusses created",
-      data: resBody,
-    });
-  } catch (error) {
+    res.redirect('/profile')
+  } catch (err) {
     res.status(400).json({
       message: "error found",
-      data: error.message,
+      data: err.message,
     });
   }
 };
@@ -49,10 +46,7 @@ const getAllPost = async (req, res) => {
     if (!resBody) {
       throw new Error("data not get");
     }
-    res.status(200).json({
-      message: " data get",
-      data: resBody,
-    });
+    res.redirect('/feed',{ user : resBody})
   } catch (err) {
     res.status(400).json({
       message: "error found",

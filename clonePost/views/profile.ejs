@@ -13,12 +13,19 @@
     <link rel="stylesheet" href="./css/profile.css" />
   </head>
   <body>
+    <%- include('./component/nav')%>
     <section>
       <div class="box1 box">
-        <div class="content">
-          <div class="image">
+          <div class="content">
+            <form id="uploadForm" hidden action="/v1/user/fileUpload" method="post" enctype="multipart/form-data">
+                <input type="file" name="image"/>
+            </form>
+              <div class="image">
+              <span id="uploadImg" class="subIcon ">
+                <ion-icon name="create-outline"></ion-icon>
+              </span>
             <img
-              src="https://i.postimg.cc/bryMmCQB/profile-image.jpg"
+              src="/image/<%=user.dp%>"
               alt="Profile Image"
             />
           </div>
@@ -59,15 +66,7 @@
               ></a>
             </button>
           </div>
-          <div class="button">
-            <div>
-              <a href="/v1/user/logout"
-                ><button class="connect bg-danger" type="button">
-                  Logout
-                </button></a
-              >
-            </div>
-          </div>
+          
           <div>
             <form
               action="/v1/post/postCreate"
@@ -82,8 +81,9 @@
         </div>
       </div>
 
-      <div class="card box2">
-      <!-- <% user.posts.forEach(function(data){ %>
+      <div class="d-flex gap-2 flex-wrap">
+      <% user.posts.forEach(function(data){ %>
+        <div class="card box2">
           <img
             src="/image/<%=data.image%>"
             alt="Profile Image"
@@ -92,10 +92,9 @@
           <div class="card-body">
             <h5 class="card-title"><%= data.postText %></h5>
           </div>
-          
-          <% });%> -->
         </div>
-      
+          <% });%>
+        </div>
     </section>
   </body>
   <script
@@ -111,4 +110,12 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"
   ></script>
+  <script>
+    document.querySelector("#uploadImg").addEventListener("click",function() {
+        document.querySelector("#uploadForm input").click();
+    })
+    document.querySelector("#uploadForm input").addEventListener("change" , function(){
+        document.querySelector("#uploadForm").submit()
+    })
+  </script>
 </html>

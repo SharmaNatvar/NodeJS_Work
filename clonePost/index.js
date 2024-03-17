@@ -49,16 +49,18 @@ app.use('/v1', routes);
 app.get('/',(req , res) =>{
     res.render ('login' ,{error:req.flash("error")})
   })
+
 app.get('/register',(req , res) =>{
     res.render ('index')
   })
+
 app.get('/feed',(req , res) =>{
     res.render ('feed')
   })
+
 app.get('/profile', isLoggedIn , async(req , res) =>{
-    // const data = await req.user.populate('posts')
-    // console.log(data);
-    res.render ('profile' , {user : req.user})
+    const data = await req.user.populate('posts')
+    res.render ('profile' , {user : data})
   })
 
 // DB connect

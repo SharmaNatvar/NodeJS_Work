@@ -6,7 +6,7 @@ const { upload } = require('../middleware/multer')
 
 
 route.post('/postCreate' ,isLoggedIn , upload.single('file'), postController.postCreate)
-route.get('/get',postController.getAllPost)
+route.get('/get' , postController.getAllPost)
 
 
 module.exports = route
