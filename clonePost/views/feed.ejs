@@ -1,36 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Feed</title>
-    <link rel="stylesheet" href="./css/feed.css">
-  <link rel="stylesheet" href="./css/cdnFeed.min.css" >
-</head>
-<body>
+    <link rel="stylesheet" href="./css/feed.css" />
+    <link rel="stylesheet" href="./css/cdnFeed.min.css" />
+  </head>
+  <body>
     <%- include('./component/nav')%>
-
     <div class="wrapper">
-      <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/en/a/ae/The_Marshall_Mathers_LP.jpg" class="cover" alt="">
-        <div class="info">
-          <div class="artist">Eminem</div>
-          <div class="album">The Marshall Mathers LP</div>
-          <div class="year">2000</div>
-        </div>
-      </div>
-  
-  
-      <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/en/e/e1/Circus-_Album.png" class="cover" alt="">
-        <div class="info">
-          <div class="artist">Britney Spears</div>
-          <div class="album">Circus</div>
-          <div class="year">2008</div>
-        </div>
-      </div>
+            <% posts.data.forEach(function(data){ %>
+              <div class="card">
+                <img
+                  src="/image/<%=data.image%>"
+                  alt="Profile Image"
+                  class="cover"
+                />
+                <div class="info">
+                  <h5 class="artist"><%= data.postText %></h5>
+                </div>
+              </div>
+                <% });%>
 
-  
     </div>
   </body>
 </html>

@@ -46,7 +46,10 @@ const getAllPost = async (req, res) => {
     if (!resBody) {
       throw new Error("data not get");
     }
-    res.redirect('/feed',{ user : resBody})
+    res.status(200).json({
+      message: " data get",
+      data: resBody,
+    });
   } catch (err) {
     res.status(400).json({
       message: "error found",
